@@ -1,0 +1,175 @@
+'use client'
+
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Award, Heart, Zap, Shield } from 'lucide-react'
+import { clinicConfig } from '@/lib/config'
+import { staggerContainer, staggerItem } from '@/lib/animations'
+import SectionHeading from '@/components/shared/section-heading'
+import PageTransition from '@/components/shared/page-transition'
+import { AppointmentButton } from '@/components/layout/appointment-drawer'
+import AboutHomeSection from '@/components/sections/about-home-section'
+import StatsSection from '@/components/sections/stats-section'
+
+export default function AboutPage() {
+  return (
+    <PageTransition>
+      {/* Hero Section */}
+      <section className="pt-32 pb-16 bg-gradient-to-br from-card via-background to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              About Aristoothcrat
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Exceptional dentistry designed around you
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <AboutHomeSection />
+
+      {/* Values Section */}
+      <section className="py-20 bg-card">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            eyebrow="Our Values"
+            title="What Drives Us"
+            description="Our core values guide every decision we make and every interaction we have with our patients."
+          />
+
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {[
+              {
+                icon: Heart,
+                title: 'Patient Care',
+                description: 'Your comfort and wellbeing is our highest priority.',
+              },
+              {
+                icon: Award,
+                title: 'Excellence',
+                description: 'We pursue perfection in every treatment and detail.',
+              },
+              {
+                icon: Zap,
+                title: 'Innovation',
+                description: 'We embrace cutting-edge technology and techniques.',
+              },
+              {
+                icon: Shield,
+                title: 'Integrity',
+                description: 'Honesty and transparency in all our dealings.',
+              },
+            ].map((value, index) => (
+              <motion.div
+                key={index}
+                variants={staggerItem}
+                className="bg-background border border-border rounded-xl p-8 text-center"
+              >
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4">
+                  <value.icon className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">{value.title}</h3>
+                <p className="text-sm text-muted-foreground">{value.description}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Team Lead Section */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image */}
+            <motion.div
+              className="h-96 rounded-2xl bg-gradient-to-br from-accent/20 to-emerald/20 border border-accent/20 flex items-center justify-center"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div className="text-6xl">👨‍⚕️</div>
+            </motion.div>
+
+            {/* Content */}
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <div>
+                <p className="text-accent font-semibold text-sm uppercase tracking-wider">
+                  Meet Our Founder
+                </p>
+                <h2 className="font-serif text-4xl font-bold text-foreground mt-2">
+                  {clinicConfig.leadDentist.name}
+                </h2>
+                <p className="text-lg text-accent font-medium mt-2">
+                  {clinicConfig.leadDentist.title}
+                </p>
+              </div>
+
+              <p className="text-muted-foreground leading-relaxed">
+                {clinicConfig.leadDentist.bio}
+              </p>
+
+              <div className="space-y-2">
+                <p className="font-semibold text-foreground">Qualifications:</p>
+                <ul className="space-y-1">
+                  {['DDS', 'Advanced Cosmetic Certification', 'Implant Specialist', '15+ Years Experience'].map(
+                    (qual, idx) => (
+                      <li key={idx} className="text-muted-foreground flex items-center gap-2">
+                        <span className="text-accent">✓</span> {qual}
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <StatsSection />
+
+      {/* CTA Section */}
+      <section className="py-16 bg-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
+              Experience Our Excellence
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              Book your consultation today and discover why patients trust Aristoothcrat.
+            </p>
+            <AppointmentButton
+              className="inline-flex px-8 py-4 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-colors"
+            >
+              Schedule Your Visit
+            </AppointmentButton>
+          </motion.div>
+        </div>
+      </section>
+    </PageTransition>
+  )
+}
