@@ -46,8 +46,7 @@ export default function AboutHomeSection() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center"
           variants={staggerContainer}
           initial="initial"
-          whileInView="animate"
-          viewport={{ once: true, amount: 0.25 }}
+          animate="animate"
         >
           <motion.div variants={staggerItem}>
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">

@@ -21,6 +21,7 @@ export default function AboutPage() {
         title="About Aristoothcrat"
         description="Exceptional dentistry designed around you"
         image={pageHeroImages.about}
+        disableMotion
       />
 
       <AboutHomeSection />

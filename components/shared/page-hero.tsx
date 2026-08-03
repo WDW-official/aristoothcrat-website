@@ -12,6 +12,7 @@ type PageHeroProps = {
   children?: React.ReactNode
   className?: string
   contentClassName?: string
+  disableMotion?: boolean
 }
 
 export default function PageHero({
@@ -22,6 +23,7 @@ export default function PageHero({
   children,
   className,
   contentClassName,
+  disableMotion = false,
 }: PageHeroProps) {
   return (
     <section
@@ -42,9 +44,9 @@ export default function PageHero({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className={cn('mx-auto max-w-3xl text-center', contentClassName)}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          initial={disableMotion ? false : { opacity: 0, y: 20 }}
+          animate={disableMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={disableMotion ? undefined : { duration: 0.6 }}
         >
           {eyebrow && (
             <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/80">

@@ -30,11 +30,26 @@ const heroSlides = [
 
 export default function HeroSection() {
   const [activeSlide, setActiveSlide] = React.useState(0)
+  const [heroVideoUrl, setHeroVideoUrl] = React.useState<string | null>(null)
   const heroDesktopVideoUrl=
     'https://res.cloudinary.com/dzn1k1z8r/video/upload/v1785631602/Aristoothcrat_Clinic_9x16_hbhwmd.mp4'
   const heroMobileVideoUrl=
     'https://res.cloudinary.com/dzn1k1z8r/video/upload/v1785631402/Aristoothcrat_Clinic_16x9_1_t7w3dg.mp4'
+  const heroPosterUrl =
+    'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_0/v1785631402/Aristoothcrat_Clinic_16x9_1_t7w3dg.jpg'
   const currentSlide = heroSlides[activeSlide]
+
+  React.useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)')
+    const updateHeroVideo = () => {
+      setHeroVideoUrl(mediaQuery.matches ? heroDesktopVideoUrl : heroMobileVideoUrl)
+    }
+
+    updateHeroVideo()
+    mediaQuery.addEventListener('change', updateHeroVideo)
+
+    return () => mediaQuery.removeEventListener('change', updateHeroVideo)
+  }, [heroDesktopVideoUrl, heroMobileVideoUrl])
 
   React.useEffect(() => {
     const timer = window.setInterval(() => {
@@ -49,29 +64,26 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative md:mt-20 mt-6 min-h-[calc(100vh-5rem)] overflow-hidden flex items-center">
-      <video
-        key={heroMobileVideoUrl}
-        className="absolute inset-0 h-full w-full object-cover md:hidden"
-        src={heroMobileVideoUrl}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
+    <section className="relative md:mt-20 mt-10 min-h-[calc(100vh-10rem)] overflow-hidden flex items-center">
+      <img
+        src={heroPosterUrl}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
       />
-      <video
-        key={heroDesktopVideoUrl}
-        className="absolute inset-0 hidden h-full w-full object-cover md:block"
-        src={heroDesktopVideoUrl}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-hidden="true"
-      />
+      {heroVideoUrl && (
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src={heroVideoUrl}
+          poster={heroPosterUrl}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        />
+      )}
       <div className="absolute inset-0 bg-black/35 dark:bg-background/65" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/20 dark:from-background/40 dark:to-background/75" />
 
