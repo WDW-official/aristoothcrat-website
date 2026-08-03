@@ -8,6 +8,8 @@ import { SERVICES } from '@/lib/constants'
 import { staggerContainer, staggerItem } from '@/lib/animations'
 import PageTransition from '@/components/shared/page-transition'
 import { AppointmentButton } from '@/components/layout/appointment-drawer'
+import PageHero from '@/components/shared/page-hero'
+import { pageHeroImages } from '@/lib/page-hero-images'
 
 const serviceHighlights: Record<string, string[]> = {
   'general-dentistry': ['Routine checkups', 'Professional cleaning', 'Digital examinations'],
@@ -24,23 +26,11 @@ export default function ServicesPage() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-card via-background to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Our Services
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive dental care for every need, from routine checkups to advanced cosmetic procedures.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Our Services"
+        description="Comprehensive dental care for every need, from routine checkups to advanced cosmetic procedures."
+        image={pageHeroImages.services}
+      />
 
       {/* Services Grid */}
       <section className="py-20 bg-background">

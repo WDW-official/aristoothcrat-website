@@ -9,28 +9,18 @@ import { staggerContainer, staggerItem } from '@/lib/animations'
 import SectionHeading from '@/components/shared/section-heading'
 import PageTransition from '@/components/shared/page-transition'
 import { AppointmentButton } from '@/components/layout/appointment-drawer'
+import PageHero from '@/components/shared/page-hero'
+import { pageHeroImages } from '@/lib/page-hero-images'
 
 export default function TeamPage() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-card via-background to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Our Expert Team
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Meet the experienced professionals dedicated to your dental health and beautiful smile.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Our Expert Team"
+        description="Meet the experienced professionals dedicated to your dental health and beautiful smile."
+        image={pageHeroImages.team}
+      />
 
       {/* Team Grid */}
       <section className="py-20 bg-background">

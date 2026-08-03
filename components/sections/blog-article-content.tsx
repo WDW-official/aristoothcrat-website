@@ -7,6 +7,7 @@ import { ArrowLeft, Calendar, Clock, Share2, User } from 'lucide-react'
 import { BLOG_POSTS } from '@/lib/constants'
 import PageTransition from '@/components/shared/page-transition'
 import { AppointmentButton } from '@/components/layout/appointment-drawer'
+import PageHero from '@/components/shared/page-hero'
 
 interface BlogArticleContentProps {
   slug: string
@@ -37,23 +38,14 @@ export default function BlogArticleContent({ slug }: BlogArticleContentProps) {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-card via-background to-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="inline-block bg-accent/10 text-accent px-4 py-2 rounded-lg text-sm font-medium">
-              {post.category}
-            </div>
-
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-foreground">
-              {post.title}
-            </h1>
-
-            <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
+      <PageHero
+        title={post.title}
+        eyebrow={post.category}
+        image={post.image}
+        className="py-16"
+        contentClassName="max-w-4xl"
+      >
+            <div className="mt-6 flex flex-wrap justify-center gap-6 text-white/75">
               <span className="flex items-center gap-2">
                 <User className="w-4 h-4" />
                 By {post.author}
@@ -71,9 +63,7 @@ export default function BlogArticleContent({ slug }: BlogArticleContentProps) {
                 {post.readTime}
               </span>
             </div>
-          </motion.div>
-        </div>
-      </section>
+      </PageHero>
 
       <motion.section
         className="py-12 bg-background"

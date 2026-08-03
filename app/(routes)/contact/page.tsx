@@ -7,6 +7,8 @@ import { clinicConfig, clinicAddress, clinicMapEmbedUrl, clinicMapSearchUrl } fr
 import { staggerContainer, staggerItem } from '@/lib/animations'
 import PageTransition from '@/components/shared/page-transition'
 import { AppointmentButton } from '@/components/layout/appointment-drawer'
+import PageHero from '@/components/shared/page-hero'
+import { pageHeroImages } from '@/lib/page-hero-images'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -37,37 +39,25 @@ export default function ContactPage() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-card via-background to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Get in Touch
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have questions? We&apos;d love to hear from you. Reach out to us using any of the methods below.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Get in Touch"
+        description="Have questions? We'd love to hear from you. Reach out to us using any of the methods below."
+        image={pageHeroImages.contact}
+      />
 
       {/* Contact Content */}
-      <section className="py-20 bg-background">
+      <section className="py-10 sm:py-16 lg:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
             {/* Contact Form */}
             <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-5 sm:space-y-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mb-5 sm:mb-8">
                 Send us a Message
               </h2>
 
@@ -140,7 +130,7 @@ export default function ContactPage() {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows={6}
+                    rows={4}
                     className="w-full px-4 py-3 rounded-lg bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors resize-none"
                     placeholder="Your message..."
                   />
@@ -170,13 +160,13 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <motion.div
-              className="space-y-8"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-5 sm:space-y-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-serif text-3xl font-bold text-foreground">Contact Information</h2>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground">Contact Information</h2>
 
               <motion.div
                 className="space-y-4"
@@ -186,10 +176,10 @@ export default function ContactPage() {
                 viewport={{ once: true }}
               >
                 {/* Phone */}
-                <motion.div variants={staggerItem} className="bg-card border border-border rounded-xl p-6">
-                  <div className="flex gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-6 h-6 text-accent" />
+                <motion.div variants={staggerItem} className="bg-card border border-border rounded-xl p-4 sm:p-6">
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">Call Us</h3>
@@ -201,7 +191,7 @@ export default function ContactPage() {
                           <a
                             key={idx}
                             href={`tel:${phone}`}
-                            className="block text-muted-foreground hover:text-accent transition-colors text-sm"
+                            className="block text-muted-foreground hover:text-accent transition-colors text-sm break-words"
                           >
                             {phone}
                           </a>
@@ -212,16 +202,16 @@ export default function ContactPage() {
                 </motion.div>
 
                 {/* Email */}
-                <motion.div variants={staggerItem} className="bg-card border border-border rounded-xl p-6">
-                  <div className="flex gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-6 h-6 text-accent" />
+                <motion.div variants={staggerItem} className="bg-card border border-border rounded-xl p-4 sm:p-6">
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">Email</h3>
                       <a
                         href={`mailto:${clinicConfig.contact.email}`}
-                        className="text-muted-foreground hover:text-accent transition-colors text-sm"
+                        className="text-muted-foreground hover:text-accent transition-colors text-sm break-words"
                       >
                         {clinicConfig.contact.email}
                       </a>
@@ -230,10 +220,10 @@ export default function ContactPage() {
                 </motion.div>
 
                 {/* Address */}
-                <motion.div variants={staggerItem} className="bg-card border border-border rounded-xl p-6">
-                  <div className="flex gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-6 h-6 text-accent" />
+                <motion.div variants={staggerItem} className="bg-card border border-border rounded-xl p-4 sm:p-6">
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">Location</h3>
@@ -243,10 +233,10 @@ export default function ContactPage() {
                 </motion.div>
 
                 {/* Hours */}
-                <motion.div variants={staggerItem} className="bg-card border border-border rounded-xl p-6">
-                  <div className="flex gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-6 h-6 text-accent" />
+                <motion.div variants={staggerItem} className="bg-card border border-border rounded-xl p-4 sm:p-6">
+                  <div className="flex gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-2">Hours</h3>
@@ -266,11 +256,11 @@ export default function ContactPage() {
                   <iframe
                     title="Map to Aristoothcrat Dental Center"
                     src={clinicMapEmbedUrl}
-                    className="h-64 w-full"
+                    className="h-56 w-full sm:h-64"
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   />
-                  <div className="flex items-center justify-between gap-4 border-t border-border px-4 py-3 text-sm">
+                  <div className="flex flex-col items-start gap-2 border-t border-border px-4 py-3 text-sm sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                     <span className="text-muted-foreground">25 Salvation Rd, Opebi, Ikeja</span>
                     <a
                       href={clinicMapSearchUrl}
@@ -289,7 +279,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-card">
+      <section className="py-10 sm:py-16 bg-card">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

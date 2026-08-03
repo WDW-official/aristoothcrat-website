@@ -6,6 +6,8 @@ import { ChevronRight, ChevronLeft, CheckCircle, Calendar, User, Phone, MessageS
 import { SERVICES, TEAM_MEMBERS } from '@/lib/constants'
 import { staggerItem } from '@/lib/animations'
 import PageTransition from '@/components/shared/page-transition'
+import PageHero from '@/components/shared/page-hero'
+import { pageHeroImages } from '@/lib/page-hero-images'
 
 export default function AppointmentPage() {
   const [step, setStep] = useState(1)
@@ -61,23 +63,11 @@ export default function AppointmentPage() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-card via-background to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Book Your Appointment
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Easy scheduling in just a few steps. Your appointment will be pending confirmation by our clinic.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Book Your Appointment"
+        description="Easy scheduling in just a few steps. Your appointment will be pending confirmation by our clinic."
+        image={pageHeroImages.appointment}
+      />
 
       {/* Booking Form */}
       <section className="py-20 bg-background">

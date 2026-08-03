@@ -10,33 +10,23 @@ import PageTransition from '@/components/shared/page-transition'
 import { AppointmentButton } from '@/components/layout/appointment-drawer'
 import AboutHomeSection from '@/components/sections/about-home-section'
 import StatsSection from '@/components/sections/stats-section'
+import PageHero from '@/components/shared/page-hero'
+import { pageHeroImages } from '@/lib/page-hero-images'
 
 export default function AboutPage() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-card via-background to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              About Aristoothcrat
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Exceptional dentistry designed around you
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="About Aristoothcrat"
+        description="Exceptional dentistry designed around you"
+        image={pageHeroImages.about}
+      />
 
       <AboutHomeSection />
 
       {/* Values Section */}
-      <section className="py-20 bg-card">
+      <section className="py-10 sm:py-16 lg:py-20 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our Values"
@@ -45,7 +35,7 @@ export default function AboutPage() {
           />
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -76,13 +66,13 @@ export default function AboutPage() {
               <motion.div
                 key={index}
                 variants={staggerItem}
-                className="bg-background border border-border rounded-xl p-8 text-center"
+                className="bg-background border border-border rounded-xl p-4 sm:p-8 text-center"
               >
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                  <value.icon className="w-6 h-6 text-accent" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <value.icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <h3 className="font-semibold text-sm sm:text-base text-foreground mb-2">{value.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground">{value.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -90,14 +80,14 @@ export default function AboutPage() {
       </section>
 
       {/* Team Lead Section */}
-      <section className="py-20 bg-background">
+      <section className="py-10 sm:py-16 lg:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Image */}
             <motion.div
-              className="h-96 rounded-2xl bg-gradient-to-br from-accent/20 to-emerald/20 border border-accent/20 flex items-center justify-center"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="h-64 sm:h-96 rounded-xl sm:rounded-2xl bg-gradient-to-br from-accent/20 to-emerald/20 border border-accent/20 flex items-center justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
@@ -106,9 +96,9 @@ export default function AboutPage() {
 
             {/* Content */}
             <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              className="space-y-4 sm:space-y-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
@@ -116,7 +106,7 @@ export default function AboutPage() {
                 <p className="text-accent font-semibold text-sm uppercase tracking-wider">
                   Meet Our Founder
                 </p>
-                <h2 className="font-serif text-4xl font-bold text-foreground mt-2">
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mt-2">
                   {clinicConfig.leadDentist.name}
                 </h2>
                 <p className="text-lg text-accent font-medium mt-2">
@@ -148,7 +138,7 @@ export default function AboutPage() {
       <StatsSection />
 
       {/* CTA Section */}
-      <section className="py-16 bg-background">
+      <section className="py-10 sm:py-16 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

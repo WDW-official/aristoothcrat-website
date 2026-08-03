@@ -7,6 +7,8 @@ import { ArrowLeft, Award, CheckCircle, Clock } from 'lucide-react'
 import { SERVICES } from '@/lib/constants'
 import PageTransition from '@/components/shared/page-transition'
 import { AppointmentButton } from '@/components/layout/appointment-drawer'
+import PageHero from '@/components/shared/page-hero'
+import { pageHeroImages } from '@/lib/page-hero-images'
 
 const serviceDetails: Record<
   string,
@@ -124,16 +126,14 @@ export default function ServiceDetailContent({ slug }: ServiceDetailContentProps
         </div>
       </section>
 
-      <section className="relative overflow-hidden py-20 bg-gradient-to-br from-card via-background to-secondary/20">
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="mx-auto flex max-w-4xl flex-col items-center text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+      <PageHero
+        title={service.name}
+        description={service.description}
+        eyebrow={service.category}
+        image={pageHeroImages.serviceDetail}
+        className="py-20"
+        contentClassName="flex max-w-4xl flex-col items-center"
+      >
             {/* <motion.div
               className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10 shadow-sm"
               whileHover={{ scale: 1.1, rotate: 5 }}
@@ -142,18 +142,7 @@ export default function ServiceDetailContent({ slug }: ServiceDetailContentProps
               <IconComponent className="w-10 h-10 text-accent" />
             </motion.div> */}
 
-            <div className="mb-5 inline-block bg-accent/10 text-accent px-4 py-2 rounded-lg text-sm font-medium">
-              {service.category}
-            </div>
-
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              {service.name}
-            </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-8">
-              {service.description}
-            </p>
-
-            <div className="flex w-full max-w-md flex-col justify-center gap-3 sm:flex-row">
+            <div className="mt-8 flex w-full max-w-md flex-col justify-center gap-3 sm:flex-row">
               <AppointmentButton
                 service={service.id}
                 className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
@@ -162,14 +151,12 @@ export default function ServiceDetailContent({ slug }: ServiceDetailContentProps
               </AppointmentButton>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-lg border border-accent px-6 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent/10"
+                className="inline-flex items-center justify-center rounded-lg border border-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent/10"
               >
                 Ask a Question
               </Link>
             </div>
-          </motion.div>
-        </div>
-      </section>
+      </PageHero>
 
       <section className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

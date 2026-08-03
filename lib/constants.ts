@@ -178,7 +178,7 @@ export const BLOG_POSTS = [
     author: 'Dr. Leo Osowa',
     readTime: '5 min read',
     excerpt: 'Learn about recommended dental visit frequency and why regular checkups are essential for oral health.',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_3/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80',
     content: [
       'Most patients benefit from a dental checkup and professional cleaning every six months. This rhythm helps your dentist catch small concerns before they become painful or expensive.',
       'Some people need more frequent visits, especially if they have gum disease, recurring cavities, braces, implants, diabetes, or a history of dental infections.',
@@ -195,7 +195,7 @@ export const BLOG_POSTS = [
     author: 'Dr. Chukwu Okonkwo',
     readTime: '8 min read',
     excerpt: 'Everything you need to know about dental implants, from the procedure to recovery and maintenance.',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_5/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
+    image: 'https://unsplash.com/photos/W9YEY6G8LVM/download?force=true',
     content: [
       'Dental implants replace missing teeth with a stable foundation placed in the jawbone and restored with a crown, bridge, or denture attachment.',
       'Treatment usually starts with a consultation, X-rays or scans, gum and bone assessment, and a discussion of your health history and goals.',
@@ -212,7 +212,7 @@ export const BLOG_POSTS = [
     author: 'Dr. Aisha Muhammad',
     readTime: '6 min read',
     excerpt: 'Compare professional whitening treatments with over-the-counter options to make an informed choice.',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_7/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
+    image: 'https://unsplash.com/photos/RCQnbyQsnUg/download?force=true',
     content: [
       'Professional whitening is supervised by a dental team, which helps protect your gums and manage tooth sensitivity while targeting stains effectively.',
       'At-home products can be convenient, but they may work slowly or unevenly, especially when stains are deep or restorations are present.',
@@ -229,7 +229,7 @@ export const BLOG_POSTS = [
     author: 'Dr. Leo Osowa',
     readTime: '4 min read',
     excerpt: 'A practical guide to managing tooth pain and knowing when to call the clinic urgently.',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_9/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
+    image: 'https://unsplash.com/photos/8BkF0sTC6Uo/download?force=true',
     content: [
       'A toothache can come from decay, infection, gum inflammation, grinding, trauma, or food trapped between teeth. Pain that persists should be assessed by a dentist.',
       'Rinse gently with warm water, floss carefully around the area, and avoid chewing on the painful side. Do not place aspirin directly on the gum because it can burn the tissue.',
@@ -246,7 +246,7 @@ export const BLOG_POSTS = [
     author: 'Dr. Leo Osowa',
     readTime: '6 min read',
     excerpt: 'Learn the common symptoms of infected tooth pulp and why early treatment can help save your tooth.',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_11/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
+    image: 'https://unsplash.com/photos/XJptUS8nbhs/download?force=true',
     content: [
       'Root canal treatment may be needed when the soft tissue inside a tooth becomes inflamed or infected. This can happen because of deep decay, cracks, trauma, or repeated dental work.',
       'Symptoms can include lingering sensitivity to hot or cold, severe toothache, pain when biting, swelling, gum tenderness, or darkening of the tooth.',
@@ -263,7 +263,7 @@ export const BLOG_POSTS = [
     author: 'Dr. Aisha Muhammad',
     readTime: '5 min read',
     excerpt: 'Pregnancy can affect gum health. Here is how to protect your smile safely during this season.',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_13/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
+    image: 'https://unsplash.com/photos/1AhGNGKuhR0/download?force=true',
     content: [
       'Hormonal changes during pregnancy can make gums more sensitive, swollen, or likely to bleed. This is why dental hygiene and professional care remain important.',
       'Routine dental checkups and cleanings are generally safe during pregnancy. Always tell your dentist that you are pregnant and share any medical guidance from your doctor.',
@@ -280,7 +280,7 @@ export const BLOG_POSTS = [
     author: 'Dr. Chukwu Okonkwo',
     readTime: '7 min read',
     excerpt: 'Both braces and aligners can straighten teeth. The best choice depends on your bite, habits, and goals.',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_15/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
+    image: 'https://images.unsplash.com/photo-1667133295315-820bb6481730?auto=format&fit=crop&w=1200&q=80',
     content: [
       'Braces are fixed appliances that can handle a wide range of tooth movement and bite correction. They work continuously because they stay on the teeth.',
       'Aligners are removable and discreet, but they require discipline. They must be worn for the recommended hours each day to work properly.',
@@ -297,7 +297,7 @@ export const BLOG_POSTS = [
     author: 'Dr. Leo Osowa',
     readTime: '5 min read',
     excerpt: 'Bleeding gums can be an early sign of gum disease. Early care helps protect your teeth and smile.',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_17/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
+    image: 'https://unsplash.com/photos/8BkF0sTC6Uo/download?force=true',
     content: [
       'Bleeding gums are often linked to plaque buildup and gum inflammation. Even if the bleeding is mild, it should not become normal to you.',
       'Gum disease can progress quietly. As it advances, it may cause bad breath, gum recession, loose teeth, and bone loss around teeth.',
@@ -314,7 +314,7 @@ export const BLOG_POSTS = [
     author: 'Dr. Aisha Muhammad',
     readTime: '6 min read',
     excerpt: 'Protect veneers, bonding, whitening results, and other cosmetic treatments with simple daily habits.',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_19/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
+    image: 'https://unsplash.com/photos/RCQnbyQsnUg/download?force=true',
     content: [
       'Cosmetic dental work lasts longer when supported by consistent hygiene, regular dental reviews, and smart habits around food and biting forces.',
       'Avoid using your teeth to open packages, biting hard objects, or chewing ice. If you grind at night, your dentist may recommend a night guard.',

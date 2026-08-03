@@ -168,10 +168,10 @@
     @apply border-border outline-ring/50;
   }
   html {
-    @apply bg-background;
+    @apply bg-background overflow-x-hidden;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;

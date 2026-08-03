@@ -7,6 +7,8 @@ import { Calendar, User, ArrowRight, Search, X } from 'lucide-react'
 import { BLOG_POSTS } from '@/lib/constants'
 import { staggerContainer, staggerItem } from '@/lib/animations'
 import PageTransition from '@/components/shared/page-transition'
+import PageHero from '@/components/shared/page-hero'
+import { pageHeroImages } from '@/lib/page-hero-images'
 
 export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -26,23 +28,11 @@ export default function BlogPage() {
   return (
     <PageTransition>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-card via-background to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="font-serif text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Our Blog
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Insights, tips, and expert advice on dental health and smile aesthetics.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        title="Our Blog"
+        description="Insights, tips, and expert advice on dental health and smile aesthetics."
+        image={pageHeroImages.blog}
+      />
 
       {/* Search and Filters */}
       <section className="py-8 bg-background border-b border-border">
