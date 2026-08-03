@@ -49,7 +49,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative mt-20 min-h-[calc(100vh-5rem)] overflow-hidden flex items-center">
+    <section className="relative md:mt-20 mt-6 min-h-[calc(100vh-5rem)] overflow-hidden flex items-center">
       <video
         key={heroMobileVideoUrl}
         className="absolute inset-0 h-full w-full object-cover md:hidden"
@@ -72,8 +72,8 @@ export default function HeroSection() {
         preload="metadata"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-background/35 dark:bg-background/65" />
-      <div className="absolute inset-0 bg-gradient-to-b from-gray via-transparent to-gary/20 dark:from-background/40 dark:to-background/75" />
+      <div className="absolute inset-0 bg-black/35 dark:bg-background/65" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/20 dark:from-background/40 dark:to-background/75" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center">
         <motion.div
@@ -92,15 +92,15 @@ export default function HeroSection() {
                 exit={{ opacity: 0, y: -18 }}
                 transition={{ duration: 0.45 }}
               >
-                <span className="inline-block text-accent font-semibold text-sm uppercase tracking-wider">
+                <span className="inline-block border-accent rounded-lg bg-background/45 px-2 backdrop-blur-sm text-accent font-semibold text-sm uppercase tracking-wider">
                   {currentSlide.eyebrow}
                 </span>
 
-                <h1 className="font-serif text-5xl lg:text-7xl font-bold text-foreground leading-tight">
+                <h1 className="font-serif text-3xl lg:text-7xl font-bold text-white leading-tight">
                   {currentSlide.title}
                 </h1>
 
-                <p className="text-lg text max-w-2xl leading-relaxed">
+                <p className="text-lg text-white  max-w-2xl leading-relaxed">
                   {currentSlide.description}
                 </p>
               </motion.div>

@@ -61,7 +61,7 @@ export const clinicConfig = {
     name: 'Dr. Leo Osowa',
     title: 'MD, CEO',
     specialization: 'General & Cosmetic Dentistry',
-    bio: 'With over 15 years of experience in dentistry, Dr. Leo Osowa founded Aristoothcrat with a vision to bring premium dental care to Lagos.',
+    bio: 'With over 19 years of experience in dentistry, Dr. Leo Osowa founded Aristoothcrat with a vision to bring premium dental care to Lagos.',
   },
 
   // SEO
@@ -74,7 +74,7 @@ export const clinicConfig = {
 
   // Features & Services Count
   stats: {
-    yearsExperience: 15,
+    yearsExperience: 19,
     patientsServed: 5000,
     teamMembers: 12,
     treatments: 25,
@@ -82,6 +82,9 @@ export const clinicConfig = {
 }
 
 export const clinicAddress = `${clinicConfig.contact.address.street}, ${clinicConfig.contact.address.area}, ${clinicConfig.contact.address.city}, ${clinicConfig.contact.address.state} ${clinicConfig.contact.address.postalCode}, ${clinicConfig.contact.address.country}`
+export const clinicMapQuery = `Aristoothcrat Dental Center best dental clinic in Lagos dental clinic Ikeja ${clinicAddress}`
+export const clinicMapEmbedUrl = `https://www.google.com/maps?q=${encodeURIComponent(clinicMapQuery)}&output=embed`
+export const clinicMapSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(clinicMapQuery)}`
 
 export const getPhoneNumbers = () => [
   clinicConfig.contact.phone.primary,

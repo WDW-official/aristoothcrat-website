@@ -30,20 +30,20 @@ export default function TestimonialsCarousel() {
   }
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-8 sm:py-10 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-5"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <span className="text-accent font-semibold text-sm uppercase tracking-wider">
+          <span className="text-accent font-semibold text-xs uppercase tracking-wider">
             What Our Patients Say
           </span>
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mt-2">
+          <h2 className="font-serif text-2xl lg:text-3xl font-bold text-foreground mt-1">
             Testimonials
           </h2>
         </motion.div>
@@ -55,7 +55,7 @@ export default function TestimonialsCarousel() {
           onMouseLeave={() => setAutoPlay(true)}
         >
           {/* Testimonial Card */}
-          <div className="bg-card border border-border rounded-2xl p-8 md:p-12 min-h-80 flex flex-col justify-between">
+          <div className="bg-card border border-border rounded-xl p-4 sm:p-5 md:p-6 min-h-48 flex flex-col justify-between">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -63,29 +63,29 @@ export default function TestimonialsCarousel() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.5 }}
-                className="space-y-6"
+                className="space-y-3"
               >
                 {/* Rating */}
                 <div className="flex gap-1">
                   {Array.from({ length: TESTIMONIALS[current].rating }).map((_, i) => (
                     <Star
                       key={i}
-                      className="w-5 h-5 fill-accent text-accent"
+                      className="w-4 h-4 fill-accent text-accent"
                     />
                   ))}
                 </div>
 
                 {/* Quote */}
-                <p className="font-serif text-2xl md:text-3xl text-foreground italic">
+                <p className="font-serif text-base sm:text-lg md:text-xl text-foreground italic">
                   &ldquo;{TESTIMONIALS[current].quote}&rdquo;
                 </p>
 
                 {/* Author */}
                 <div>
-                  <p className="font-semibold text-foreground">
+                  <p className="font-semibold text-sm sm:text-base text-foreground">
                     {TESTIMONIALS[current].name}
                   </p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     {TESTIMONIALS[current].treatment} • {TESTIMONIALS[current].location}
                   </p>
                 </div>
@@ -94,11 +94,11 @@ export default function TestimonialsCarousel() {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center justify-between mt-8">
+          <div className="flex items-center justify-between mt-3">
             <div className="flex gap-2">
               <motion.button
                 onClick={prev}
-                className="w-12 h-12 rounded-lg bg-card border border-border hover:border-accent flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-lg bg-card border border-border hover:border-accent flex items-center justify-center transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Previous testimonial"
@@ -107,7 +107,7 @@ export default function TestimonialsCarousel() {
               </motion.button>
               <motion.button
                 onClick={next}
-                className="w-12 h-12 rounded-lg bg-card border border-border hover:border-accent flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-lg bg-card border border-border hover:border-accent flex items-center justify-center transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Next testimonial"
@@ -133,7 +133,7 @@ export default function TestimonialsCarousel() {
               ))}
             </div>
 
-            <div className="text-sm text-muted-foreground">
+            <div className="text-xs text-muted-foreground">
               {current + 1} / {TESTIMONIALS.length}
             </div>
           </div>

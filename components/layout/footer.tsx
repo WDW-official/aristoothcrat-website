@@ -7,12 +7,10 @@ import {
   MapPin,
   Phone,
   Mail,
-  Clock,
   ChevronUp,
   Share2,
 } from 'lucide-react'
 import { clinicConfig, clinicAddress } from '@/lib/config'
-import { BrandLogo } from '@/components/shared/brand-logo'
 
 const FOOTER_SECTIONS = [
   {
@@ -47,6 +45,8 @@ const FOOTER_SECTIONS = [
 ]
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear()
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -64,7 +64,11 @@ export default function Footer() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <BrandLogo className="mb-3 h-16 max-w-[260px]" />
+              <img
+                src={clinicConfig.logo.dark}
+                alt="Aristoothcrat Dental Clinic"
+                className="mb-3 h-16 w-auto max-w-[260px] object-contain"
+              />
               <p className="text-sm text-white/75">{clinicConfig.tagline}</p>
               <div className="flex gap-4 mt-6">
                 <a
@@ -154,7 +158,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-white/65">
-            © 2024 {clinicConfig.name}. All rights reserved.
+            © {currentYear} {clinicConfig.name}. All rights reserved.
           </p>
           <motion.button
             onClick={scrollToTop}

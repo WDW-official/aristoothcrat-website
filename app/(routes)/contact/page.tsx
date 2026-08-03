@@ -3,7 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react'
-import { clinicConfig, clinicAddress } from '@/lib/config'
+import { clinicConfig, clinicAddress, clinicMapEmbedUrl, clinicMapSearchUrl } from '@/lib/config'
 import { staggerContainer, staggerItem } from '@/lib/animations'
 import PageTransition from '@/components/shared/page-transition'
 import { AppointmentButton } from '@/components/layout/appointment-drawer'
@@ -256,6 +256,30 @@ export default function ContactPage() {
                         <p>Sunday: Closed</p>
                       </div>
                     </div>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  variants={staggerItem}
+                  className="overflow-hidden rounded-xl border border-border bg-card"
+                >
+                  <iframe
+                    title="Map to Aristoothcrat Dental Center"
+                    src={clinicMapEmbedUrl}
+                    className="h-64 w-full"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                  <div className="flex items-center justify-between gap-4 border-t border-border px-4 py-3 text-sm">
+                    <span className="text-muted-foreground">25 Salvation Rd, Opebi, Ikeja</span>
+                    <a
+                      href={clinicMapSearchUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 font-semibold text-accent hover:text-accent/80"
+                    >
+                      Open Map
+                    </a>
                   </div>
                 </motion.div>
               </motion.div>

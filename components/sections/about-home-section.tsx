@@ -11,12 +11,12 @@ const aboutImages = [
     alt: 'Aristoothcrat dental clinic interior',
   },
   {
-    src: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_5/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
-    alt: 'Aristoothcrat dental care environment',
+    src: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785728591/bright_empty_dental_room_16x10_mkrrne.svg',
+    alt: 'Bright empty dental room at Aristoothcrat',
   },
   {
-    src: 'https://res.cloudinary.com/dzn1k1z8r/video/upload/so_8/v1785469218/Aristoothcrat_Dental_16x9_xnypqv.jpg',
-    alt: 'Aristoothcrat dental treatment room',
+    src: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785728803/bright_dental_scene_10x16_u3mk0w.svg',
+    alt: 'Bright dental care scene at Aristoothcrat',
   },
 ]
 
@@ -40,10 +40,10 @@ export default function AboutHomeSection() {
   }
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-10 sm:py-16 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -53,10 +53,10 @@ export default function AboutHomeSection() {
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-3">
               About Us
             </p>
-            <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 className="font-serif text-3xl lg:text-5xl font-bold text-foreground mb-4 sm:mb-6">
               Welcome to Aristoothcrat Dental Care!
             </h2>
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
+            <div className="space-y-3 sm:space-y-5 text-muted-foreground leading-relaxed">
               <p>
                 Aristoothcrat Dental Clinic first opened in Ikeja Lagos on September 12, 2009,
                 under the Managing Dentist, Dr. Leo Osowa, with over 19 years experience in dentistry.

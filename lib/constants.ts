@@ -88,7 +88,7 @@ export const TEAM_MEMBERS = [
     role: 'MD, CEO & Lead Dentist',
     specialization: 'General & Cosmetic Dentistry',
     image: '/images/team/leo-osowa.jpg',
-    bio: 'With over 15 years of experience, Dr. Leo founded Aristoothcrat to bring premium dental care to Lagos.',
+    bio: 'With over 19 years of experience, Dr. Leo founded Aristoothcrat to bring premium dental care to Lagos.',
     qualifications: ['DDS', 'Advanced Cosmetic Certification', 'Implant Specialist'],
     social: {
       linkedin: '#',

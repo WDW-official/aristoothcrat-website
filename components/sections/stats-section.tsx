@@ -55,7 +55,7 @@ function AnimatedStatNumber({ value, suffix }: { value: number; suffix: string }
 
 export default function StatsSection() {
   return (
-    <section className="py-16 bg-card border-y border-border">
+    <section className="py-8 sm:py-12 lg:py-16 bg-card border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-8"

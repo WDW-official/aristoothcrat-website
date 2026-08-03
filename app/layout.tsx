@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import Navbar from '@/components/layout/navbar'
@@ -8,7 +8,6 @@ import Footer from '@/components/layout/footer'
 import WhatsAppFloat from '@/components/layout/whatsapp-float'
 import { AppointmentDrawerProvider } from '@/components/layout/appointment-drawer'
 
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-serif' })
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
@@ -58,9 +57,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`smooth-scroll ${playfair.variable} ${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`smooth-scroll ${inter.variable}`}>
       <body className="antialiased font-sans">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <AppointmentDrawerProvider>
             <Navbar />
             <main className="min-h-screen">{children}</main>

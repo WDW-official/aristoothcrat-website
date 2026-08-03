@@ -9,11 +9,11 @@ import { staggerContainer, staggerItem } from '@/lib/animations'
 
 export default function TeamSection() {
   return (
-    <section className="py-20 bg-card">
+    <section className="py-10 sm:py-16 lg:py-20 bg-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-6 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -22,7 +22,7 @@ export default function TeamSection() {
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
             Our Team
           </span>
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
+          <h2 className="font-serif text-3xl lg:text-5xl font-bold text-foreground mt-2 mb-3 sm:mb-4">
             Meet Our Experts
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -32,7 +32,7 @@ export default function TeamSection() {
 
         {/* Team Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -96,7 +96,7 @@ export default function TeamSection() {
 
         {/* View All Button */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center md:mt-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}

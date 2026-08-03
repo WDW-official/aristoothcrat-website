@@ -80,7 +80,7 @@ export default function Navbar() {
 
           {/* Right side actions */}
           <div className="flex items-center gap-4">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <motion.div
               className="hidden sm:inline-block px-4 py-2 bg-accent text-accent-foreground rounded-lg font-medium text-sm"
               whileHover={{ scale: 1.05 }}

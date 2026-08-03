@@ -8,7 +8,7 @@ import { AppointmentButton } from '@/components/layout/appointment-drawer'
 
 export default function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-card via-card to-accent/5">
+    <section className="py-10 sm:py-16 lg:py-20 bg-gradient-to-br from-card via-card to-accent/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center space-y-8"

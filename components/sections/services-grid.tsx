@@ -9,11 +9,11 @@ import { staggerContainer, staggerItem } from '@/lib/animations'
 
 export default function ServicesGrid() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-10 sm:py-16 lg:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-6 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -22,7 +22,7 @@ export default function ServicesGrid() {
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
             Our Services
           </span>
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-4">
+          <h2 className="font-serif text-3xl lg:text-5xl font-bold text-foreground mt-2 mb-3 sm:mb-4">
             Comprehensive Dental Care
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -33,7 +33,7 @@ export default function ServicesGrid() {
 
         {/* Services Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -49,24 +49,24 @@ export default function ServicesGrid() {
               >
                 <Link href={`/services/${service.slug}`}>
                   <motion.div
-                    className="relative h-full bg-card border border-border rounded-xl p-6 hover:border-accent transition-colors"
+                    className="relative h-full bg-card border border-border rounded-xl p-4 sm:p-6 hover:border-accent transition-colors"
                     whileHover={{ y: -8 }}
                     transition={{ duration: 0.3 }}
                   >
                     {/* Icon */}
                     <motion.div
-                      className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4"
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <IconComponent className="w-6 h-6 text-accent" />
+                      <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                     </motion.div>
 
                     {/* Content */}
-                    <h3 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                    <h3 className="font-semibold text-sm sm:text-base text-foreground mb-2 group-hover:text-accent transition-colors">
                       {service.name}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
+                    <p className="text-xs sm:text-sm text-muted-foreground mb-4">
                       {service.description}
                     </p>
 
