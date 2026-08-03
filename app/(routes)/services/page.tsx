@@ -100,7 +100,7 @@ export default function ServicesPage() {
                     </Link>
                     <AppointmentButton
                       service={service.id}
-                      className="inline-flex items-center justify-center rounded-lg border border-accent px-5 py-3 text-sm font-semibold text-accent transition-colors hover:bg-accent/10"
+                      className="inline-flex items-center justify-center rounded-lg border border-accent px-5 py-3 text-sm font-semibold hover:text-accent transition-colors hover:bg-accent/10"
                     >
                       Book This Service
                     </AppointmentButton>

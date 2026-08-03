@@ -134,13 +134,13 @@ export default function ServiceDetailContent({ slug }: ServiceDetailContentProps
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <motion.div
+            {/* <motion.div
               className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10 shadow-sm"
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ duration: 0.3 }}
             >
               <IconComponent className="w-10 h-10 text-accent" />
-            </motion.div>
+            </motion.div> */}
 
             <div className="mb-5 inline-block bg-accent/10 text-accent px-4 py-2 rounded-lg text-sm font-medium">
               {service.category}
