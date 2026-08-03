@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/providers/theme-provider'
 import Navbar from '@/components/layout/navbar'
 import Footer from '@/components/layout/footer'
 import WhatsAppFloat from '@/components/layout/whatsapp-float'
+import TopLoader from '@/components/layout/top-loader'
 import { AppointmentDrawerProvider } from '@/components/layout/appointment-drawer'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
@@ -68,6 +69,7 @@ export default function RootLayout({
       <body className="antialiased font-sans">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <AppointmentDrawerProvider>
+            <TopLoader />
             <Navbar />
             <main className="min-h-screen">{children}</main>
             <Footer />
