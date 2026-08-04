@@ -35,19 +35,10 @@ export const SERVICES = [
     id: 'restorative',
     name: 'Restorative Dentistry',
     slug: 'restorative-dentistry',
-    description: 'Crowns, bridges, and advanced restorations to restore damaged teeth.',
+    description: 'Crowns, bridges, fillings, and root canal treatment to restore damaged teeth.',
     icon: Award,
     color: 'text-amber-500',
     category: 'Restorative',
-  },
-  {
-    id: 'whitening',
-    name: 'Teeth Whitening',
-    slug: 'teeth-whitening',
-    description: 'Professional bleaching treatments for a brighter, whiter smile.',
-    icon: Sparkles,
-    color: 'text-white',
-    category: 'Cosmetic',
   },
   {
     id: 'implants',
@@ -67,15 +58,6 @@ export const SERVICES = [
     color: 'text-purple-500',
     category: 'Specialty',
   },
-  {
-    id: 'root-canal',
-    name: 'Root Canal Treatment',
-    slug: 'root-canal-treatment',
-    description: 'Advanced endodontic treatment to save infected or damaged teeth.',
-    icon: Heart,
-    color: 'text-red-500',
-    category: 'Major',
-  },
 ]
 
 /**
@@ -87,8 +69,8 @@ export const TEAM_MEMBERS = [
     name: 'Dr. Leo Osowa',
     role: 'MD, CEO & Lead Dentist',
     specialization: 'General & Cosmetic Dentistry',
-    image: '/images/team/leo-osowa.jpg',
-    bio: 'With over 19 years of experience, Dr. Leo founded Aristoothcrat to bring premium dental care to Lagos.',
+    image: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785799341/Dr_Leo_Osowa_Dental_Portrait_dawkwc.svg',
+    bio: 'With 25 years of excellence in dentistry, Dr. Leo founded Aristoothcrat to bring premium dental care to Lagos.',
     qualifications: ['DDS', 'Advanced Cosmetic Certification', 'Implant Specialist'],
     social: {
       linkedin: '#',
@@ -149,7 +131,7 @@ export const TESTIMONIALS = [
     id: 'testimonial-3',
     name: 'Olusayo Ojo',
     location: 'Lagos',
-    treatment: 'Teeth Whitening',
+    treatment: 'Preventive Dentistry',
     rating: 5,
     quote: 'Professional service from start to finish. Very impressed with the results.',
     image: '/images/testimonials/olusayo.jpg',
@@ -202,23 +184,6 @@ export const BLOG_POSTS = [
       'After placement, the implant needs time to integrate with the bone. Once healed, the final restoration is made to match your bite and smile.',
     ],
     keyTakeaways: ['Implants can replace one or multiple missing teeth', 'Planning is essential before treatment begins', 'Healing time is part of long-term implant success'],
-  },
-  {
-    id: 'blog-3',
-    title: 'Professional Teeth Whitening vs. At-Home Treatments',
-    slug: 'teeth-whitening-comparison',
-    category: 'Cosmetic',
-    date: '2024-01-05',
-    author: 'Dr. Aisha Muhammad',
-    readTime: '6 min read',
-    excerpt: 'Compare professional whitening treatments with over-the-counter options to make an informed choice.',
-    image: 'https://unsplash.com/photos/RCQnbyQsnUg/download?force=true',
-    content: [
-      'Professional whitening is supervised by a dental team, which helps protect your gums and manage tooth sensitivity while targeting stains effectively.',
-      'At-home products can be convenient, but they may work slowly or unevenly, especially when stains are deep or restorations are present.',
-      'Before whitening, it is important to confirm that your teeth and gums are healthy. Cavities, gum irritation, or leaking fillings should be treated first.',
-    ],
-    keyTakeaways: ['Professional whitening is faster and supervised', 'Dental restorations do not whiten like natural teeth', 'A checkup before whitening improves safety'],
   },
   {
     id: 'blog-4',
@@ -313,12 +278,12 @@ export const BLOG_POSTS = [
     date: '2024-02-21',
     author: 'Dr. Aisha Muhammad',
     readTime: '6 min read',
-    excerpt: 'Protect veneers, bonding, whitening results, and other cosmetic treatments with simple daily habits.',
+    excerpt: 'Protect veneers, bonding, smile design results, and other cosmetic treatments with simple daily habits.',
     image: 'https://unsplash.com/photos/RCQnbyQsnUg/download?force=true',
     content: [
       'Cosmetic dental work lasts longer when supported by consistent hygiene, regular dental reviews, and smart habits around food and biting forces.',
       'Avoid using your teeth to open packages, biting hard objects, or chewing ice. If you grind at night, your dentist may recommend a night guard.',
-      'Whitening results and restorations benefit from routine cleaning and reduced exposure to heavy staining foods and drinks.',
+      'Cosmetic restorations benefit from routine cleaning and reduced exposure to heavy staining foods and drinks.',
     ],
     keyTakeaways: ['Protect cosmetic work from hard biting forces', 'Night guards can help patients who grind', 'Regular cleaning helps maintain results'],
   },
@@ -345,8 +310,8 @@ export const FAQS = [
   },
   {
     id: 'faq-4',
-    question: 'Is teeth whitening safe?',
-    answer: 'Professional teeth whitening is completely safe when performed by a qualified dentist. We use proven, FDA-approved whitening agents.',
+    question: 'Do you offer teeth whitening?',
+    answer: 'No. Aristoothcrat Dental Clinic does not offer teeth whitening services.',
   },
 ]
 
@@ -357,13 +322,13 @@ export const TRUST_INDICATORS = [
   {
     id: 'indicator-1',
     icon: Award,
-    title: '15+ Years',
-    description: 'Experience in dentistry',
+    title: '25 Years',
+    description: 'Excellence with Dr. Leo Osowa',
   },
   {
     id: 'indicator-2',
     icon: Heart,
-    title: '5000+',
+    title: '19000+',
     description: 'Happy patients',
   },
   {
@@ -425,7 +390,7 @@ export const WHY_CHOOSE_US = [
     id: 'benefit-1',
     icon: Award,
     title: 'Experienced Team',
-    description: 'Our dentists have 15+ years of experience and specialized training.',
+    description: 'Dr. Leo Osowa brings 25 years of excellence in dentistry, supported by a trained clinical team.',
   },
   {
     id: 'benefit-2',

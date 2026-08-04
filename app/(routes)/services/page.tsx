@@ -15,11 +15,9 @@ const serviceHighlights: Record<string, string[]> = {
   'general-dentistry': ['Routine checkups', 'Professional cleaning', 'Digital examinations'],
   'cosmetic-dentistry': ['Smile design', 'Veneers and bonding', 'Natural-looking results'],
   preventive: ['Oral health screening', 'Fluoride and sealants', 'Personal care guidance'],
-  restorative: ['Crowns and bridges', 'Tooth-colored fillings', 'Bite restoration'],
-  whitening: ['In-clinic whitening', 'Stain removal', 'Brighter smile shade'],
+  restorative: ['Crowns and bridges', 'Tooth-colored fillings', 'Root canal treatment'],
   implants: ['Missing tooth replacement', 'Implant planning', 'Long-term restoration'],
   orthodontics: ['Braces and aligners', 'Bite correction', 'Smile alignment'],
-  'root-canal': ['Infection treatment', 'Tooth preservation', 'Pain relief'],
 }
 
 export default function ServicesPage() {
@@ -28,7 +26,7 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <PageHero
         title="Our Services"
-        description="Comprehensive dental care for every need, from routine checkups to advanced cosmetic procedures."
+        description="Comprehensive dental care for every need, from routine checkups to restorative and advanced cosmetic procedures."
         image={pageHeroImages.services}
       />
 

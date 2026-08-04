@@ -45,7 +45,15 @@ export default function TeamPage() {
                 >
                   {/* Image */}
                   <div className="relative h-72 rounded-2xl overflow-hidden bg-gradient-to-br from-accent/20 to-emerald/20 border border-border mb-6 flex items-center justify-center shadow-lg">
-                    <div className="text-7xl">👨‍⚕️</div>
+                    {member.image.startsWith('https://') ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="text-7xl">👨‍⚕️</div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
 

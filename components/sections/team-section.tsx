@@ -44,15 +44,23 @@ export default function TeamSection() {
               variants={staggerItem}
               className="group"
             >
-              <Link href={`/team/${member.id}`}>
+              {/* <Link href={`/team/${member.id}`}> */}
                 <motion.div
                   className="relative"
                   whileHover={{ y: -8 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {/* Image Placeholder */}
+                  {/* Image */}
                   <div className="relative h-64 rounded-xl overflow-hidden bg-gradient-to-br from-accent/20 to-emerald/20 border border-border mb-4 flex items-center justify-center">
-                    <div className="text-6xl">👨‍⚕️</div>
+                    {member.image.startsWith('https://') ? (
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="h-full w-full object-cover"
+                      />
+                    ) : (
+                      <div className="text-6xl">👨‍⚕️</div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
 
@@ -89,7 +97,7 @@ export default function TeamSection() {
                     </motion.div>
                   </div>
                 </motion.div>
-              </Link>
+              {/* </Link> */}
             </motion.div>
           ))}
         </motion.div>

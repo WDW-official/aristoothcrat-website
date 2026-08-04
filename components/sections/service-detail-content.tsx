@@ -50,21 +50,12 @@ const serviceDetails: Record<
   },
   restorative: {
     overview:
-      'Restorative dentistry repairs damaged, worn, decayed, or missing teeth so your smile can function comfortably and look natural again.',
-    whoFor: ['Patients with broken or decayed teeth', 'People needing crowns, bridges, or fillings', 'Anyone struggling to chew comfortably', 'Patients replacing old restorations'],
-    benefits: ['Restored bite function', 'Stronger damaged teeth', 'Natural-looking repairs', 'Reduced discomfort', 'Protected tooth structure', 'Improved everyday chewing'],
+      'Restorative dentistry repairs damaged, worn, decayed, infected, or missing teeth so your smile can function comfortably and look natural again. Root canal treatment is handled as part of restorative care.',
+    whoFor: ['Patients with broken or decayed teeth', 'People needing crowns, bridges, fillings, or root canal treatment', 'Anyone struggling to chew comfortably', 'Patients replacing old restorations'],
+    benefits: ['Restored bite function', 'Stronger damaged teeth', 'Natural-looking repairs', 'Reduced discomfort', 'Protected tooth structure', 'Root canal care to help save infected teeth'],
     duration: '45-120 mins',
     recovery: 'Usually minimal',
     results: 'Same-day to staged',
-  },
-  whitening: {
-    overview:
-      'Professional teeth whitening lifts stubborn stains safely and efficiently for a noticeably brighter smile than most at-home products can provide.',
-    whoFor: ['Patients with coffee, tea, or wine stains', 'People wanting a brighter smile', 'Anyone preparing for photos or events', 'Patients seeking supervised whitening care'],
-    benefits: ['Brighter tooth shade', 'Fast visible improvement', 'Supervised treatment safety', 'Reduced surface staining', 'More confident smile', 'Simple maintenance guidance'],
-    duration: '45-75 mins',
-    recovery: 'Possible short sensitivity',
-    results: 'Same-day brightness',
   },
   implants: {
     overview:
@@ -83,15 +74,6 @@ const serviceDetails: Record<
     duration: 'Months to staged care',
     recovery: 'Adjustment sensitivity',
     results: 'Gradual alignment',
-  },
-  'root-canal': {
-    overview:
-      'Root canal treatment removes infection from inside a tooth, relieves pain, and helps preserve your natural tooth instead of removing it.',
-    whoFor: ['Patients with severe toothache', 'People with infected or damaged tooth pulp', 'Anyone with lingering hot or cold sensitivity', 'Patients trying to save a natural tooth'],
-    benefits: ['Pain relief', 'Tooth preservation', 'Infection control', 'Restored chewing comfort', 'Avoided extraction when possible', 'Protected natural smile'],
-    duration: '60-90 mins',
-    recovery: 'Mild short tenderness',
-    results: 'Relief and restoration',
   },
 }
 

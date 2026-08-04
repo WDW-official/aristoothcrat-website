@@ -71,7 +71,7 @@ export default function CTASection() {
           >
             <p className="text-sm text-muted-foreground mb-2">We&apos;re available:</p>
             <p className="font-semibold text-foreground">
-              Mon-Fri 9:00 AM - 6:00 PM • Sat 10:00 AM - 4:00 PM
+              Mon-Fri 9:00 a.m. - 5:00 p.m. • Sat 9:00 a.m. - 2:00 p.m.
             </p>
           </motion.div>
         </motion.div>

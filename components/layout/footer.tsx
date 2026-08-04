@@ -29,9 +29,8 @@ const FOOTER_SECTIONS = [
     links: [
       { label: 'General Dentistry', href: '/services/general-dentistry' },
       { label: 'Cosmetic Dentistry', href: '/services/cosmetic-dentistry' },
+      { label: 'Restorative Dentistry', href: '/services/restorative-dentistry' },
       { label: 'Dental Implants', href: '/services/dental-implants' },
-      { label: 'Teeth Whitening', href: '/services/teeth-whitening' },
-      { label: 'Root Canal', href: '/services/root-canal-treatment' },
     ],
   },
   {

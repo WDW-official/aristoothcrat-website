@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { staggerContainer, staggerItem } from '@/lib/animations'
 
@@ -18,13 +18,29 @@ const aboutImages = [
     src: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785728803/bright_dental_scene_10x16_u3mk0w.svg',
     alt: 'Bright dental care scene at Aristoothcrat',
   },
+  {
+    src: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785799289/bright_dental_treatment_1x1_mpydrk.svg',
+    alt: 'Bright dental treatment at Aristoothcrat',
+  },
+  {
+    src: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785799340/dental_clinic_bright_1x1_bvq4w2.svg',
+    alt: 'Bright dental clinic at Aristoothcrat',
+  },
 ]
+
+const imageSlideVariants = {
+  enter: (direction: number) => ({ x: `${direction * 100}%`, opacity: 0.85 }),
+  center: { x: 0, opacity: 1 },
+  exit: (direction: number) => ({ x: `${direction * -100}%`, opacity: 0.85 }),
+}
 
 export default function AboutHomeSection() {
   const [currentImage, setCurrentImage] = React.useState(0)
+  const [slideDirection, setSlideDirection] = React.useState(1)
 
   React.useEffect(() => {
     const timer = window.setInterval(() => {
+      setSlideDirection(1)
       setCurrentImage((current) => (current + 1) % aboutImages.length)
     }, 4500)
 
@@ -32,11 +48,20 @@ export default function AboutHomeSection() {
   }, [])
 
   const showPrevious = () => {
+    setSlideDirection(-1)
     setCurrentImage((current) => (current - 1 + aboutImages.length) % aboutImages.length)
   }
 
   const showNext = () => {
+    setSlideDirection(1)
     setCurrentImage((current) => (current + 1) % aboutImages.length)
+  }
+
+  const showImage = (nextImage: number) => {
+    if (nextImage === currentImage) return
+
+    setSlideDirection(nextImage > currentImage ? 1 : -1)
+    setCurrentImage(nextImage)
   }
 
   return (
@@ -58,7 +83,7 @@ export default function AboutHomeSection() {
             <div className="space-y-3 sm:space-y-5 text-muted-foreground leading-relaxed">
               <p>
                 Aristoothcrat Dental Clinic first opened in Ikeja Lagos on September 12, 2009,
-                under the Managing Dentist, Dr. Leo Osowa, with over 19 years experience in dentistry.
+                under the Managing Dentist, Dr. Leo Osowa, with 25 years of excellence in dentistry.
               </p>
               <p>
                 Aristoothcrat Dental Clinic is dedicated to comprehensive dental care that focuses on
@@ -79,20 +104,20 @@ export default function AboutHomeSection() {
             variants={staggerItem}
             className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-card shadow-lg"
           >
-            {aboutImages.map((image, index) => (
+            <AnimatePresence initial={false} custom={slideDirection} mode="popLayout">
               <motion.img
-                key={image.src}
-                src={image.src}
-                alt={image.alt}
+                key={aboutImages[currentImage].src}
+                src={aboutImages[currentImage].src}
+                alt={aboutImages[currentImage].alt}
                 className="absolute inset-0 h-full w-full object-cover"
-                initial={false}
-                animate={{
-                  opacity: index === currentImage ? 1 : 0,
-                  scale: index === currentImage ? 1 : 1.04,
-                }}
-                transition={{ duration: 0.6 }}
+                custom={slideDirection}
+                variants={imageSlideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               />
-            ))}
+            </AnimatePresence>
 
             <div className="absolute inset-0 bg-gradient-to-t from-background/35 via-transparent to-transparent" />
 
@@ -102,7 +127,7 @@ export default function AboutHomeSection() {
                   <button
                     key={image.src}
                     type="button"
-                    onClick={() => setCurrentImage(index)}
+                    onClick={() => showImage(index)}
                     className={`h-2.5 rounded-full transition-all ${
                       index === currentImage ? 'w-8 bg-accent' : 'w-2.5 bg-background/70'
                     }`}

@@ -6,8 +6,8 @@ import { clinicConfig } from '@/lib/config'
 import { staggerContainer, staggerItem } from '@/lib/animations'
 
 const stats = [
-  { value: clinicConfig.stats.yearsExperience, suffix: '', label: 'Years Experience' },
-  { value: clinicConfig.stats.patientsServed, suffix: '+', label: 'Happy Patients' },
+  { value: clinicConfig.stats.yearsExperience, suffix: '', label: 'Years of Excellence' },
+  { value: clinicConfig.stats.patientsServed, suffix: '+', label: 'Patients Cared For' },
   { value: clinicConfig.stats.teamMembers, suffix: '', label: 'Team Members' },
   { value: clinicConfig.stats.treatments, suffix: '+', label: 'Treatment Types' },
 ]

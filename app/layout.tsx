@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 export const metadata: Metadata = {
   title: 'Aristoothcrat Dental Clinic | Premium Dentistry in Lagos',
   description: 'Exceptional dentistry designed around you. Premium dental services including implants, cosmetic dentistry, and comprehensive oral care in Lagos, Nigeria.',
-  keywords: ['dentist', 'dental clinic', 'Lagos', 'implants', 'cosmetic dentistry', 'teeth whitening'],
+  keywords: ['dentist', 'dental clinic', 'Lagos', 'implants', 'cosmetic dentistry', 'restorative dentistry'],
   openGraph: {
     title: 'Aristoothcrat Dental Clinic',
     description: 'Exceptional dentistry designed around you.',

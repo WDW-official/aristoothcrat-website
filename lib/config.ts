@@ -6,7 +6,7 @@
 export const clinicConfig = {
   name: 'Aristoothcrat Dental Clinic',
   tagline: 'Exceptional dentistry. Designed around you.',
-  description: 'Premium dental services including implants, cosmetic dentistry, preventive care, and more in Lagos, Nigeria.',
+  description: 'Premium dental services including implants, cosmetic dentistry, preventive care, restorative care, and more in Lagos, Nigeria.',
   logo: {
     light: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785630966/aristoothcrat-logo-light_jcfnw9.png',
     dark: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785630913/aristoothcrat-logo-dark_g1xacw.png',
@@ -33,12 +33,12 @@ export const clinicConfig = {
 
   // Operating Hours
   hours: {
-    monday: { open: '9:00 AM', close: '6:00 PM' },
-    tuesday: { open: '9:00 AM', close: '6:00 PM' },
-    wednesday: { open: '9:00 AM', close: '6:00 PM' },
-    thursday: { open: '9:00 AM', close: '6:00 PM' },
-    friday: { open: '9:00 AM', close: '6:00 PM' },
-    saturday: { open: '10:00 AM', close: '4:00 PM' },
+    monday: { open: '9:00 a.m.', close: '5:00 p.m.' },
+    tuesday: { open: '9:00 a.m.', close: '5:00 p.m.' },
+    wednesday: { open: '9:00 a.m.', close: '5:00 p.m.' },
+    thursday: { open: '9:00 a.m.', close: '5:00 p.m.' },
+    friday: { open: '9:00 a.m.', close: '5:00 p.m.' },
+    saturday: { open: '9:00 a.m.', close: '2:00 p.m.' },
     sunday: { open: 'Closed', close: 'Closed' },
   },
 
@@ -61,7 +61,7 @@ export const clinicConfig = {
     name: 'Dr. Leo Osowa',
     title: 'MD, CEO',
     specialization: 'General & Cosmetic Dentistry',
-    bio: 'With over 19 years of experience in dentistry, Dr. Leo Osowa founded Aristoothcrat with a vision to bring premium dental care to Lagos.',
+    bio: 'With 25 years of excellence in dentistry, Dr. Leo Osowa founded Aristoothcrat with a vision to bring premium dental care to Lagos.',
   },
 
   // SEO
@@ -74,8 +74,8 @@ export const clinicConfig = {
 
   // Features & Services Count
   stats: {
-    yearsExperience: 19,
-    patientsServed: 5000,
+    yearsExperience: 17,
+    patientsServed: 19000,
     teamMembers: 12,
     treatments: 25,
   },

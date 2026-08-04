@@ -86,13 +86,17 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             {/* Image */}
             <motion.div
-              className="h-64 sm:h-96 rounded-xl sm:rounded-2xl bg-gradient-to-br from-accent/20 to-emerald/20 border border-accent/20 flex items-center justify-center"
+              className="h-64 sm:h-96 overflow-hidden rounded-xl sm:rounded-2xl border border-accent/20 bg-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="text-6xl">👨‍⚕️</div>
+              <img
+                src="https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785799341/Dr_Leo_Osowa_Dental_Portrait_dawkwc.svg"
+                alt="Dr. Leo Osowa"
+                className="h-full w-full object-cover"
+              />
             </motion.div>
 
             {/* Content */}
@@ -122,7 +126,7 @@ export default function AboutPage() {
               <div className="space-y-2">
                 <p className="font-semibold text-foreground">Qualifications:</p>
                 <ul className="space-y-1">
-                  {['DDS', 'Advanced Cosmetic Certification', 'Implant Specialist', '15+ Years Experience'].map(
+                  {['DDS', 'Advanced Cosmetic Certification', 'Implant Specialist', '25 Years of Excellence'].map(
                     (qual, idx) => (
                       <li key={idx} className="text-muted-foreground flex items-center gap-2">
                         <span className="text-accent">✓</span> {qual}

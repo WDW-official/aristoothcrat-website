@@ -24,7 +24,7 @@ const heroSlides = [
     eyebrow: 'Cosmetic and Implant Dentistry',
     title: 'Designed Around Your Smile',
     description:
-      'Transform your smile with personalized cosmetic dentistry, whitening, implants, and treatment plans made for you.',
+      'Transform your smile with personalized cosmetic dentistry, implants, restorative care, and treatment plans made for you.',
   },
 ]
 
@@ -64,7 +64,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative md:mt-20 mt-10 min-h-[calc(100vh-10rem)] overflow-hidden flex items-center">
+    <section className="relative mt-20 min-h-[calc(100svh-5rem)] overflow-hidden flex items-center py-8 sm:py-12">
       <img
         src={heroPosterUrl}
         alt=""
@@ -108,7 +108,7 @@ export default function HeroSection() {
                   {currentSlide.eyebrow}
                 </span>
 
-                <h1 className="font-serif text-3xl lg:text-7xl font-bold text-white leading-tight">
+                <h1 className="font-serif text-[31px] lg:text-7xl font-bold text-white leading-tight">
                   {currentSlide.title}
                 </h1>
 
@@ -149,20 +149,21 @@ export default function HeroSection() {
               Get in Touch
             </Link>
           </motion.div>
-        </motion.div>
 
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <button
-            onClick={scrollToNext}
-            className="w-12 h-12 rounded-full border border-accent/40 bg-background/45 backdrop-blur-sm flex items-center justify-center hover:border-accent transition-colors"
-            aria-label="Scroll down"
+          <motion.div
+            className="pt-2"
+            variants={fadeInUp}
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
           >
-            <ChevronDown className="w-6 h-6 text-accent" />
-          </button>
+            <button
+              onClick={scrollToNext}
+              className="w-12 h-12 rounded-full border border-accent/40 bg-background/45 backdrop-blur-sm flex items-center justify-center hover:border-accent transition-colors"
+              aria-label="Scroll down"
+            >
+              <ChevronDown className="w-6 h-6 text-accent" />
+            </button>
+          </motion.div>
         </motion.div>
       </div>
     </section>
