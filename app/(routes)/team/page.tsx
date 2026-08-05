@@ -26,7 +26,7 @@ export default function TeamPage() {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="flex flex-wrap justify-center gap-8"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
@@ -36,7 +36,7 @@ export default function TeamPage() {
               <motion.div
                 key={member.id}
                 variants={staggerItem}
-                className="group"
+                className="group w-full max-w-sm md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.334rem)]"
               >
                 <motion.div
                   className="relative"

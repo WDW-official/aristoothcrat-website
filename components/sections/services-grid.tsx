@@ -22,7 +22,7 @@ export default function ServicesGrid() {
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">
             Our Services
           </span>
-          <h2 className="font-serif text-3xl lg:text-5xl font-bold text-foreground mt-2 mb-3 sm:mb-4">
+          <h2 className="font-serif text-4xl lg:text-5xl font-bold text-foreground mt-2 mb-3 sm:mb-4">
             Comprehensive Dental Care
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">

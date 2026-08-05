@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
@@ -21,7 +21,20 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
   const pathname = usePathname()
+  const isTransparent = !hasScrolled && !isOpen
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setHasScrolled(window.scrollY > 12)
+    }
+
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const isActiveLink = (href: string) => {
     if (href === '/') {
@@ -35,7 +48,9 @@ export default function Navbar() {
     <motion.nav
       className={cn(
         'fixed top-0 w-full z-50 transition-all duration-300',
-        'bg-background/95 backdrop-blur-md border-b border-border shadow-sm'
+        isTransparent
+          ? 'bg-transparent'
+          : 'bg-background/85 backdrop-blur-md border-b border-border shadow-sm'
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -67,8 +82,12 @@ export default function Navbar() {
                     className={cn(
                       'px-4 py-2 rounded-md transition-colors duration-200 text-sm font-medium',
                       isActive
-                        ? 'bg-accent/15 text-accent'
-                        : 'hover:bg-accent/10 hover:text-accent text-foreground'
+                        ? isTransparent
+                          ? 'bg-white/15 text-white'
+                          : 'bg-accent/15 text-accent'
+                        : isTransparent
+                          ? 'text-white hover:bg-white/10'
+                          : 'text-foreground hover:bg-accent/10 hover:text-accent'
                     )}
                   >
                     {link.label}
@@ -94,7 +113,10 @@ export default function Navbar() {
             {/* Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-accent/10 transition-colors"
+              className={cn(
+                'md:hidden p-2 rounded-lg transition-colors',
+                isTransparent ? 'text-white hover:bg-white/10' : 'hover:bg-accent/10'
+              )}
               aria-label="Toggle menu"
             >
               {isOpen ? (
@@ -125,9 +147,9 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   aria-current={isActive ? 'page' : undefined}
-                  className={cn(
-                    'px-4 py-2 rounded-lg transition-colors text-sm font-medium',
-                    isActive
+                    className={cn(
+                      'px-4 py-2 rounded-lg transition-colors text-sm font-medium',
+                      isActive
                       ? 'bg-accent/15 text-accent'
                       : 'hover:bg-accent/10 hover:text-accent'
                   )}

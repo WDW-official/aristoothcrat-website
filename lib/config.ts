@@ -74,7 +74,7 @@ export const clinicConfig = {
 
   // Features & Services Count
   stats: {
-    yearsExperience: 17,
+    yearsExperience: 25,
     patientsServed: 19000,
     teamMembers: 12,
     treatments: 25,

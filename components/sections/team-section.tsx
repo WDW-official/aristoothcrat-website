@@ -32,7 +32,7 @@ export default function TeamSection() {
 
         {/* Team Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
+          className="flex flex-wrap justify-center gap-5 sm:gap-8"
           variants={staggerContainer}
           initial="initial"
           whileInView="animate"
@@ -42,7 +42,7 @@ export default function TeamSection() {
             <motion.div
               key={member.id}
               variants={staggerItem}
-              className="group"
+              className="group w-full max-w-sm md:w-[calc(50%-1rem)]"
             >
               {/* <Link href={`/team/${member.id}`}> */}
                 <motion.div

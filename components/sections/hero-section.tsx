@@ -64,7 +64,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative mt-20 min-h-[calc(100svh-5rem)] overflow-hidden flex items-center py-8 sm:py-12">
+    <section className="relative min-h-svh overflow-hidden flex items-start pt-24 pb-8 sm:items-center sm:pt-32 sm:pb-12">
       <img
         src={heroPosterUrl}
         alt=""
@@ -94,7 +94,7 @@ export default function HeroSection() {
           initial="initial"
           animate="animate"
         >
-          <div className="grid min-h-[18rem] place-items-center sm:min-h-[16rem]">
+          <div className="grid min-h-[13rem] place-items-center sm:min-h-[16rem]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide.title}
@@ -119,7 +119,7 @@ export default function HeroSection() {
             </AnimatePresence>
           </div>
 
-          <motion.div className="flex items-center justify-center gap-2" variants={fadeInUp}>
+          <motion.div className="mt-14 flex items-center justify-center gap-2 sm:mt-0" variants={fadeInUp}>
             {heroSlides.map((slide, index) => (
               <button
                 key={slide.title}
@@ -134,17 +134,18 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div
-            className="flex flex-col sm:flex-row justify-center gap-4 pt-4"
+            className="flex w-full max-w-sm flex-row justify-center gap-2 pt-3 sm:max-w-none sm:gap-4 sm:pt-4"
             variants={fadeInUp}
           >
             <AppointmentButton
-              className="inline-flex items-center justify-center px-8 py-4 bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-colors"
+              className="inline-flex flex-1 items-center justify-center whitespace-nowrap px-3 py-3 text-sm bg-accent text-accent-foreground rounded-lg font-semibold hover:bg-accent/90 transition-colors sm:flex-none sm:px-8 sm:py-4 sm:text-base"
             >
-              Book Appointment
+              <span className="sm:hidden">Book Now</span>
+              <span className="hidden sm:inline">Book Appointment</span>
             </AppointmentButton>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 border border-accent text-accent rounded-lg font-semibold bg-background/45 backdrop-blur-sm hover:bg-accent/10 transition-colors"
+              className="inline-flex flex-1 items-center justify-center whitespace-nowrap px-3 py-3 text-sm border border-accent text-accent rounded-lg font-semibold bg-background/45 backdrop-blur-sm hover:bg-accent/10 transition-colors sm:flex-none sm:px-8 sm:py-4 sm:text-base"
             >
               Get in Touch
             </Link>

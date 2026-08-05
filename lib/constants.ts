@@ -64,45 +64,45 @@ export const SERVICES = [
  * Team members at Aristoothcrat Dental Clinic
  */
 export const TEAM_MEMBERS = [
-  {
-    id: 'leo-osowa',
-    name: 'Dr. Leo Osowa',
-    role: 'MD, CEO & Lead Dentist',
-    specialization: 'General & Cosmetic Dentistry',
-    image: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785799341/Dr_Leo_Osowa_Dental_Portrait_dawkwc.svg',
-    bio: 'With 25 years of excellence in dentistry, Dr. Leo founded Aristoothcrat to bring premium dental care to Lagos.',
-    qualifications: ['DDS', 'Advanced Cosmetic Certification', 'Implant Specialist'],
-    social: {
-      linkedin: '#',
-      twitter: '#',
-    },
-  },
-  {
-    id: 'dr-aisha',
-    name: 'Dr. Aisha Muhammad',
-    role: 'Cosmetic Dentist',
-    specialization: 'Cosmetic & Esthetic Dentistry',
-    image: '/images/team/aisha.jpg',
-    bio: 'Specializing in smile design and cosmetic transformations with a keen eye for detail.',
-    qualifications: ['DDS', 'Advanced Esthetic Dentistry', 'Veneers Specialist'],
-    social: {
-      linkedin: '#',
-      twitter: '#',
-    },
-  },
-  {
-    id: 'dr-chukwu',
-    name: 'Dr. Chukwu Okonkwo',
-    role: 'Implant Specialist',
-    specialization: 'Dental Implants & Oral Surgery',
-    image: '/images/team/chukwu.jpg',
-    bio: 'Expert in advanced implant procedures with successful treatment of complex cases.',
-    qualifications: ['DDS', 'Oral Surgery Certificate', 'Implantology Specialist'],
-    social: {
-      linkedin: '#',
-      twitter: '#',
-    },
-  },
+  // {
+    //   id: 'dr-aisha',
+    //   name: 'Dr. Aisha Muhammad',
+    //   role: 'Cosmetic Dentist',
+    //   specialization: 'Cosmetic & Esthetic Dentistry',
+    //   image: '/images/team/aisha.jpg',
+    //   bio: 'Specializing in smile design and cosmetic transformations with a keen eye for detail.',
+    //   qualifications: ['DDS', 'Advanced Esthetic Dentistry', 'Veneers Specialist'],
+    //   social: {
+      //     linkedin: '#',
+      //     twitter: '#',
+      //   },
+      // },
+      {
+        id: 'leo-osowa',
+        name: 'Dr. Leo Osowa',
+        role: 'MD, CEO & Lead Dentist',
+        specialization: 'General & Cosmetic Dentistry',
+        image: 'https://res.cloudinary.com/dzn1k1z8r/image/upload/v1785799341/Dr_Leo_Osowa_Dental_Portrait_dawkwc.svg',
+        bio: 'With 25 years of excellence in dentistry, Dr. Leo founded Aristoothcrat to bring premium dental care to Lagos.',
+        qualifications: ['DDS', 'Advanced Cosmetic Certification', 'Implant Specialist'],
+        social: {
+          linkedin: '#',
+          twitter: '#',
+        },
+      },
+  // {
+  //   id: 'dr-chukwu',
+  //   name: 'Dr. Chukwu Okonkwo',
+  //   role: 'Implant Specialist',
+  //   specialization: 'Dental Implants & Oral Surgery',
+  //   image: '/images/team/chukwu.jpg',
+  //   bio: 'Expert in advanced implant procedures with successful treatment of complex cases.',
+  //   qualifications: ['DDS', 'Oral Surgery Certificate', 'Implantology Specialist'],
+  //   social: {
+  //     linkedin: '#',
+  //     twitter: '#',
+  //   },
+  // },
 ]
 
 /**

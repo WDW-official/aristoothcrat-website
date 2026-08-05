@@ -37,6 +37,7 @@ const imageSlideVariants = {
 export default function AboutHomeSection() {
   const [currentImage, setCurrentImage] = React.useState(0)
   const [slideDirection, setSlideDirection] = React.useState(1)
+  const activeImage = aboutImages[currentImage]
 
   React.useEffect(() => {
     const timer = window.setInterval(() => {
@@ -102,57 +103,65 @@ export default function AboutHomeSection() {
 
           <motion.div
             variants={staggerItem}
-            className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-card shadow-lg"
+            className="relative overflow-hidden rounded-2xl border border-border"
           >
-            <AnimatePresence initial={false} custom={slideDirection} mode="popLayout">
-              <motion.img
-                key={aboutImages[currentImage].src}
-                src={aboutImages[currentImage].src}
-                alt={aboutImages[currentImage].alt}
-                className="absolute inset-0 h-full w-full object-cover"
-                custom={slideDirection}
-                variants={imageSlideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              />
-            </AnimatePresence>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <AnimatePresence initial={false} custom={slideDirection} mode="popLayout">
+                <motion.img
+                  key={activeImage.src}
+                  src={activeImage.src}
+                  alt={activeImage.alt}
+                  className="absolute inset-0 h-full w-full object-cover"
+                  custom={slideDirection}
+                  variants={imageSlideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                />
+              </AnimatePresence>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-background/35 via-transparent to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/35 to-transparent" />
 
-            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-              <div className="flex gap-2">
-                {aboutImages.map((image, index) => (
-                  <button
-                    key={image.src}
-                    type="button"
-                    onClick={() => showImage(index)}
-                    className={`h-2.5 rounded-full transition-all ${
-                      index === currentImage ? 'w-8 bg-accent' : 'w-2.5 bg-background/70'
-                    }`}
-                    aria-label={`Show clinic image ${index + 1}`}
-                  />
-                ))}
-              </div>
+              {/* <div className="absolute left-3 top-3 rounded-full bg-background/80 px-2.5 py-1 text-[11px] font-semibold text-foreground backdrop-blur-md sm:left-4 sm:top-4 sm:text-xs">
+                {currentImage + 1} / {aboutImages.length}
+              </div> */}
 
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  onClick={showPrevious}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground backdrop-blur-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={showNext}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground backdrop-blur-sm transition-colors hover:bg-accent hover:text-accent-foreground"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
+              <button
+                type="button"
+                onClick={showPrevious}
+                className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/25 text-white backdrop-blur-md transition-colors hover:bg-accent sm:h-10 sm:w-10"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                onClick={showNext}
+                className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/25 bg-black/25 text-white backdrop-blur-md transition-colors hover:bg-accent sm:h-10 sm:w-10"
+                aria-label="Next image"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 sm:bottom-4 sm:left-4 sm:right-4">
+                <div className="flex flex-1 gap-1.5 sm:gap-2">
+                  {aboutImages.map((image, index) => (
+                    <button
+                      key={image.src}
+                      type="button"
+                      onClick={() => showImage(index)}
+                      className={`h-1.5 rounded-full transition-all sm:h-2 ${
+                        index === currentImage ? 'w-5 bg-accent sm:w-8' : 'w-1.5 bg-white/55 hover:bg-accent/70 sm:w-2'
+                      }`}
+                      aria-label={`Show clinic image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <p className="hidden rounded-full bg-black/25 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-md sm:block">
+                  Clinic Gallery
+                </p>
               </div>
             </div>
           </motion.div>
